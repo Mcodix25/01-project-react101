@@ -21,17 +21,28 @@ function Header() {
     </header>
   );
 }
+////// removing props' word by applying destructuring (see right bellow)
+function CoreConcepts_({title,description,image}){
+  return(
+<li>
+   <img src = {image} alt = {title}/> 
+   <h3>{title}</h3>
+   <p> {description}</p>
 
+</li>
+
+/* 
 function CoreConcepts_(props){
   return(
-    // 'props'- tulay to papunta sa function na 'App', then props.image.. props.etc", para makuha yung value nung function sa apps
 <li>
    <img src = {props.image} alt = {props.title}/> 
    <h3>{props.title}</h3>
    <p> {props.description}</p>
-  
 
 </li>
+
+*/
+
 // "alt"- means pag hindi nag load yung image na props.image, etong "alt yung lalabas".
 // lahat na nadito sa <li> value hinugot dun sa baba sa "Function App" like image, description
 
@@ -51,6 +62,7 @@ function App() {
         <CoreConcepts_ {...CORE_CONCEPTS[0]} />
         <CoreConcepts_ {...CORE_CONCEPTS[1]} />
         <CoreConcepts_ {...CORE_CONCEPTS[2]} />
+        <CoreConcepts_ {...CORE_CONCEPTS[3]} />
         
       
         </ul>
