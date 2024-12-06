@@ -1,5 +1,6 @@
 import reactImage from "./assets/react-core-concepts.png";
 import compImg from "./assets/components.png";
+import {CORE_CONCEPTS} from "./data.js";
 
 
 const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
@@ -28,10 +29,11 @@ function CoreConcepts_(props){
    <img src = {props.image} alt = {props.title}/> 
    <h3>{props.title}</h3>
    <p> {props.description}</p>
-   <h1> {props.sulat}</h1>
+  
 
 </li>
 // "alt"- means pag hindi nag load yung image na props.image, etong "alt yung lalabas".
+// lahat na nadito sa <li> value hinugot dun sa baba sa "Function App" like image, description
 
   );
 }
@@ -45,21 +47,32 @@ function App() {
         <section id="core-concepts">
         <h2>Core concepts!</h2>
         <ul>
-        <CoreConcepts_ //magpapasa ng value sa ginawa natin dun sa function na CoreConcepts sa taas.yung word na ('props') maglilink sa knila, any character will do.
-        title = "Components" /*this "title" called props*/
-        description = "The core UI building block" /*this "description" called props*/  
-        image = {compImg} // "compImg"-dun sa taas nkalink sa import comImpg // kelangan yung word na "image" dito parehas din dun sa taas sa"CoreConcepts"
+        <CoreConcepts_ 
+        title = {CORE_CONCEPTS[0].title}
+        description = {CORE_CONCEPTS[0].description}
+        image = {CORE_CONCEPTS[0].image}
         />
-        <CoreConcepts_ /> 
+        <CoreConcepts_ 
+         title = {CORE_CONCEPTS[1].title}
+         description = {CORE_CONCEPTS[1].description}
+         image = {CORE_CONCEPTS[1].image}
+
+        />
+        <CoreConcepts_ 
+         title = {CORE_CONCEPTS[2].title}
+         description = {CORE_CONCEPTS[2].description}
+         image = {CORE_CONCEPTS[2].image}/> 
       
-        <CoreConcepts_/>
-
-
         </ul>
         </section>
       </main>
     </div>
   );
 }
+/*<CoreConcepts_ 
+         title = {CORE_CONCEPTS[2].title}                    // galing to sa data.js, may array dun.
+         description = {CORE_CONCEPTS[2].description}
+         image = {CORE_CONCEPTS[2].image}/> */
+
 
 export default App;
