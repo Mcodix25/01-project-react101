@@ -47,21 +47,11 @@ function App() {
         <section id="core-concepts">
         <h2>Core concepts!</h2>
         <ul>
-        <CoreConcepts_ 
-        title = {CORE_CONCEPTS[0].title}
-        description = {CORE_CONCEPTS[0].description}
-        image = {CORE_CONCEPTS[0].image}
-        />
-        <CoreConcepts_ 
-         title = {CORE_CONCEPTS[1].title}
-         description = {CORE_CONCEPTS[1].description}
-         image = {CORE_CONCEPTS[1].image}
-
-        />
-        <CoreConcepts_ 
-         title = {CORE_CONCEPTS[2].title}
-         description = {CORE_CONCEPTS[2].description}
-         image = {CORE_CONCEPTS[2].image}/> 
+        
+        <CoreConcepts_ {...CORE_CONCEPTS[0]} />
+        <CoreConcepts_ {...CORE_CONCEPTS[1]} />
+        <CoreConcepts_ {...CORE_CONCEPTS[2]} />
+        
       
         </ul>
         </section>
@@ -72,7 +62,15 @@ function App() {
 /*<CoreConcepts_ 
          title = {CORE_CONCEPTS[2].title}                    // galing to sa data.js, may array dun.
          description = {CORE_CONCEPTS[2].description}
-         image = {CORE_CONCEPTS[2].image}/> */
+         image = {CORE_CONCEPTS[2].image}/>
+         
+ <CoreConcepts_ 
+        title = {CORE_CONCEPTS[0].title}
+        description = {CORE_CONCEPTS[0].description}
+        image = {CORE_CONCEPTS[0].image}
+        />
+        //////// long method, pinalitan ng spread operator
+        */
 
 
 export default App;
