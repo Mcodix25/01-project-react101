@@ -42,7 +42,7 @@ function App() {
       <Header />
      
       <main>
-        <section id="core-concepts"></section>
+        <section id="core-concepts">
         <h2>Core concepts!</h2>
         <ul>
         <CoreConcepts_ //magpapasa ng value sa ginawa natin dun sa function na CoreConcepts sa taas.yung word na ('props') maglilink sa knila, any character will do.
@@ -50,12 +50,13 @@ function App() {
         description = "The core UI building block" /*this "description" called props*/  
         image = {compImg} // "compImg"-dun sa taas nkalink sa import comImpg // kelangan yung word na "image" dito parehas din dun sa taas sa"CoreConcepts"
         />
-        <CoreConcepts_ description= "hello"  /> 
+        <CoreConcepts_ /> 
       
-        <CoreConcepts_ title="tester"/>
+        <CoreConcepts_/>
 
 
         </ul>
+        </section>
       </main>
     </div>
   );
