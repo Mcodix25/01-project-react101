@@ -2,6 +2,8 @@ import componentsImg from './assets/components.png';
 import propsImg from './assets/config.png';
 import jsxImg from './assets/jsx-ui.png';
 import stateImg from './assets/state-mgmt.png';
+import culionImg from './assets/culion.png';
+
 
 export const CORE_CONCEPTS = [
   {
@@ -27,5 +29,11 @@ export const CORE_CONCEPTS = [
     title: 'State',
     description:
       'React-managed data which, when changed, causes the component to re-render & the UI to update.',
+  },
+  {
+    image:culionImg ,
+    title: 'Culion',
+    description:
+      'lets go to culion palawan and have some fun!',
   },
 ];
