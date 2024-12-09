@@ -1,25 +1,13 @@
 
 
 import {CORE_CONCEPTS} from "./data.js";
-import Header from "./components/Header.jsx";
+import Header from "./components/Header/Header.jsx";
 import CoreConcepts_ from "./components/CoreConcepts_.jsx";
 
-/*
-function CoreConcepts_({title,description,image}){
-  return(
-<li>
-   <img src = {image} alt = {title}/> 
-   <h3>{title}</h3>
-   <p> {description}</p>
-
-</li>
-
-  );
-}
-*/
 function App() {
   return (
     <div>
+    
       <Header />
      
       <main>
@@ -42,3 +30,5 @@ function App() {
 }
 
 export default App;
+
+// importing header and core concept. created separated folder
