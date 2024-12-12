@@ -7,17 +7,20 @@ import TabButton from "./components/TabButton.jsx";
 import {EXAMPLES} from "./data.js"
 
 function App() {
-  const [selectedTopic,setSelectedTopic]= useState('components');
+  const [selectedTopic,setSelectedTopic]= useState();
 
   function handleSelect(selectedButton){
-   // console.log('Hello McRod + handleSellect is running');
-   //tabContent=selectedButton;
    setSelectedTopic(selectedButton);
    console.log(selectedTopic);
 }
-
-console.log('APP COMPONENT EXECUTING');
-
+let tabContent= <p>pls. select</p>
+ if (selectedTopic){
+  tabContent = (
+<div id='tab-content'>
+          <h3>{EXAMPLES[selectedTopic].title}</h3>
+          <p>{EXAMPLES[selectedTopic].description}</p>
+          <pre><code> {EXAMPLES[selectedTopic].code}</code></pre> </div>)
+ }
   return (
     <div>
     
@@ -46,20 +49,7 @@ console.log('APP COMPONENT EXECUTING');
             <TabButton onSelect = {()=>handleSelect('props')}> Props </TabButton>
             <TabButton onSelect = {()=>handleSelect("state")}> State </TabButton>
           </menu>
-          {selectedTopic}
-          <div id='tab-content'>
-          
-          <h3>
-           {EXAMPLES[selectedTopic].title}
-          </h3>
-          <p>
-          {EXAMPLES[selectedTopic].description}
-          </p>
-          <pre>
-          <code> {EXAMPLES[selectedTopic].code}</code>
-          </pre> 
-        </div>
-       
+          {tabContent}
 
         </section>
       </main>
@@ -83,4 +73,23 @@ export default App;
             <code> {EXAMPLES[selectedTopic].code}</code>
             </pre> 
           </div>
+
+    /////////// other way to write above code
+       {!selectedTopic? <p>pls select a topic</p> :null} 
+          { selectedTopic? (
+          <div id='tab-content'>
+          <h3>{EXAMPLES[selectedTopic].title}</h3>
+          <p>{EXAMPLES[selectedTopic].description}</p>
+          <pre><code> {EXAMPLES[selectedTopic].code}</code></pre> </div>
+        ) :null}
+    //////////////////////
+///other option
+          {!selectedTopic && <p>pls select a topic</p>} 
+          { selectedTopic && (
+          <div id='tab-content'>
+          <h3>{EXAMPLES[selectedTopic].title}</h3>
+          <p>{EXAMPLES[selectedTopic].description}</p>
+          <pre><code> {EXAMPLES[selectedTopic].code}</code></pre> </div>
+        ) }
+
 */
